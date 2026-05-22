@@ -1,0 +1,1010 @@
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root,
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 262.1 83.3% 57.8%;
+
+    --radius: 0.5rem;
+
+    --font-sans: Outfit, sans-serif;
+    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-mono: monospace;
+
+    --shadow-color: #000000;
+    --shadow-opacity: 0.17;
+    --shadow-blur: 3px;
+    --shadow-spread: 0px;
+    --shadow-offset-x: 0px;
+    --shadow-offset-y: 1px;
+    --letter-spacing: 0.025em;
+    --spacing: 0.25rem;
+
+    --shadow-2xs: 0px 1px 3px 0px hsl(0 0% 0% / 0.09);
+    --shadow-xs: 0px 1px 3px 0px hsl(0 0% 0% / 0.09);
+    --shadow-sm: 0px 1px 3px 0px hsl(0 0% 0% / 0.17), 0px 1px 2px -1px hsl(0 0% 0% / 0.17);
+    --shadow: 0px 1px 3px 0px hsl(0 0% 0% / 0.17), 0px 1px 2px -1px hsl(0 0% 0% / 0.17);
+    --shadow-md: 0px 1px 3px 0px hsl(0 0% 0% / 0.17), 0px 2px 4px -1px hsl(0 0% 0% / 0.17);
+    --shadow-lg: 0px 1px 3px 0px hsl(0 0% 0% / 0.17), 0px 4px 6px -1px hsl(0 0% 0% / 0.17);
+    --shadow-xl: 0px 1px 3px 0px hsl(0 0% 0% / 0.17), 0px 8px 10px -1px hsl(0 0% 0% / 0.17);
+    --shadow-2xl: 0px 1px 3px 0px hsl(0 0% 0% / 0.43);
+
+    --tracking-normal: 0.025em;
+    --tracking-tighter: calc(var(--tracking-normal) - 0.05em);
+    --tracking-tight: calc(var(--tracking-normal) - 0.025em);
+    --tracking-wide: calc(var(--tracking-normal) + 0.025em);
+    --tracking-wider: calc(var(--tracking-normal) + 0.05em);
+    --tracking-widest: calc(var(--tracking-normal) + 0.1em);
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 263.4 70% 50.4%;
+
+    --radius: 0.5rem;
+    --font-sans: Outfit, sans-serif;
+    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    --font-mono: monospace;
+
+    --shadow-color: #000000;
+    --shadow-opacity: 0.17;
+    --shadow-blur: 3px;
+    --shadow-spread: 0px;
+    --shadow-offset-x: 0px;
+    --shadow-offset-y: 1px;
+    --letter-spacing: 0.025em;
+    --spacing: 0.25rem;
+
+    --shadow-2xs: 0px 1px 3px 0px hsl(0 0% 0% / 0.09);
+    --shadow-xs: 0px 1px 3px 0px hsl(0 0% 0% / 0.09);
+    --shadow-sm: 0px 1px 3px 0px hsl(0 0% 0% / 0.17), 0px 1px 2px -1px hsl(0 0% 0% / 0.17);
+    --shadow: 0px 1px 3px 0px hsl(0 0% 0% / 0.17), 0px 1px 2px -1px hsl(0 0% 0% / 0.17);
+    --shadow-md: 0px 1px 3px 0px hsl(0 0% 0% / 0.17), 0px 2px 4px -1px hsl(0 0% 0% / 0.17);
+    --shadow-lg: 0px 1px 3px 0px hsl(0 0% 0% / 0.17), 0px 4px 6px -1px hsl(0 0% 0% / 0.17);
+    --shadow-xl: 0px 1px 3px 0px hsl(0 0% 0% / 0.17), 0px 8px 10px -1px hsl(0 0% 0% / 0.17);
+    --shadow-2xl: 0px 1px 3px 0px hsl(0 0% 0% / 0.43);
+  }
+
+  .theme-sleek-dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 263.4 70% 50.4%;
+    --red-line-color: rgba(239, 68, 68, 0.45);
+    --notepad-line-color: rgba(255, 255, 255, 0.03);
+  }
+
+  .theme-obsidian-black {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 263.4 70% 50.4%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 10%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 10%;
+    --muted-foreground: 240 5% 60%;
+    --accent: 240 3.7% 12%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15%;
+    --input: 240 3.7% 15%;
+    --ring: 263.4 70% 50.4%;
+    --red-line-color: rgba(239, 68, 68, 0.5);
+    --notepad-line-color: rgba(255, 255, 255, 0.04);
+  }
+
+  .theme-minimal-white {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --red-line-color: rgba(239, 68, 68, 0.35);
+    --notepad-line-color: rgba(0, 0, 0, 0.04);
+  }
+
+  .theme-royal-violet {
+    --background: 250 40% 7%;
+    --foreground: 250 20% 95%;
+    --card: 250 40% 7%;
+    --card-foreground: 250 20% 95%;
+    --popover: 250 40% 9%;
+    --popover-foreground: 250 20% 95%;
+    --primary: 263.4 70% 55%;
+    --primary-foreground: 250 40% 95%;
+    --secondary: 250 30% 15%;
+    --secondary-foreground: 250 20% 95%;
+    --muted: 250 30% 15%;
+    --muted-foreground: 250 15% 65%;
+    --accent: 250 25% 18%;
+    --accent-foreground: 250 20% 95%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 250 25% 18%;
+    --input: 250 25% 18%;
+    --ring: 263.4 70% 55%;
+    --red-line-color: rgba(239, 68, 68, 0.5);
+    --notepad-line-color: rgba(168, 85, 247, 0.07);
+  }
+
+  .theme-rose-ember {
+    --background: 340 30% 7%;
+    --foreground: 340 20% 95%;
+    --card: 340 30% 7%;
+    --card-foreground: 340 20% 95%;
+    --popover: 340 30% 9%;
+    --popover-foreground: 340 20% 95%;
+    --primary: 350 70% 55%;
+    --primary-foreground: 340 30% 95%;
+    --secondary: 340 25% 15%;
+    --secondary-foreground: 340 20% 95%;
+    --muted: 340 25% 15%;
+    --muted-foreground: 340 15% 65%;
+    --accent: 340 20% 18%;
+    --accent-foreground: 340 20% 95%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 340 20% 18%;
+    --input: 340 20% 18%;
+    --ring: 350 70% 55%;
+    --red-line-color: rgba(239, 68, 68, 0.55);
+    --notepad-line-color: rgba(244, 63, 94, 0.08);
+  }
+
+  .theme-warm-bronze {
+    --background: 20 20% 7%;
+    --foreground: 30 20% 94%;
+    --card: 20 20% 7%;
+    --card-foreground: 30 20% 94%;
+    --popover: 20 20% 9%;
+    --popover-foreground: 30 20% 94%;
+    --primary: 35 50% 50%;
+    --primary-foreground: 20 20% 94%;
+    --secondary: 20 15% 15%;
+    --secondary-foreground: 30 20% 94%;
+    --muted: 20 15% 15%;
+    --muted-foreground: 30 10% 65%;
+    --accent: 20 12% 18%;
+    --accent-foreground: 30 20% 94%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 20 12% 18%;
+    --input: 20 12% 18%;
+    --ring: 35 50% 50%;
+    --red-line-color: rgba(239, 68, 68, 0.45);
+    --notepad-line-color: rgba(217, 119, 6, 0.08);
+  }
+
+  .theme-midnight-navy {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 96%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 96%;
+    --popover: 222 47% 10%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 222 30% 18%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 222 30% 18%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 32% 17%;
+    --accent-foreground: 210 40% 96%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 199 89% 48%;
+    --red-line-color: rgba(244, 63, 94, 0.55);
+    --notepad-line-color: rgba(56, 189, 248, 0.08);
+  }
+
+  .theme-forest-moss {
+    --background: 150 30% 10%;
+    --foreground: 60 30% 96%;
+    --card: 150 30% 10%;
+    --card-foreground: 60 30% 96%;
+    --popover: 150 30% 9%;
+    --popover-foreground: 60 30% 96%;
+    --primary: 142 70% 45%;
+    --primary-foreground: 150 30% 10%;
+    --secondary: 150 20% 16%;
+    --secondary-foreground: 60 30% 96%;
+    --muted: 150 20% 16%;
+    --muted-foreground: 120 10% 60%;
+    --accent: 150 15% 18%;
+    --accent-foreground: 60 30% 96%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 150 15% 18%;
+    --input: 150 15% 18%;
+    --ring: 142 70% 45%;
+    --red-line-color: rgba(239, 68, 68, 0.55);
+    --notepad-line-color: rgba(74, 222, 128, 0.08);
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    letter-spacing: var(--tracking-normal);
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.15);
+  border-radius: 3px;
+}
+.light ::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.25);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.35);
+}
+
+/* Page Break preview helper for editor/live view */
+.page-break-preview {
+  border-top: 1px dashed #334155;
+  position: relative;
+}
+.page-break-preview::after {
+  content: "PAGE BREAK";
+  position: absolute;
+  top: -8px;
+  right: 16px;
+  background: #0f172a;
+  padding: 0 8px;
+  font-size: 9px;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.05em;
+}
+.light .page-break-preview {
+  border-top: 1px dashed #e2e8f0;
+}
+.light .page-break-preview::after {
+  background: #f8fafc;
+  color: #94a3b8;
+}
+
+/* -------------------------------------------------------------
+   THEME STYLES (Moved to Global CSS to keep JS bundle light)
+   ------------------------------------------------------------- */
+
+/* Common Markdown Resets */
+.markdown-body {
+  width: 100%;
+  height: 100%;
+}
+.markdown-body h1, .markdown-body h2, .markdown-body h3, 
+.markdown-body h4, .markdown-body p, .markdown-body ul, 
+.markdown-body ol, .markdown-body table, .markdown-body blockquote {
+  margin-top: 0;
+}
+
+/* Modern Theme */
+.theme-modern {
+  font-family: 'Inter', sans-serif;
+}
+.theme-modern h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  border-bottom: 2px solid #3b82f6;
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.theme-modern h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+.theme-modern h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #334155;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.theme-modern p {
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  color: #334155;
+}
+.theme-modern strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+.theme-modern code {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.875em;
+  background-color: #f1f5f9;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: #2563eb;
+}
+.theme-modern pre {
+  background-color: #0f172a;
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+}
+.theme-modern pre code {
+  background-color: transparent;
+  color: #f8fafc;
+  padding: 0;
+}
+.theme-modern blockquote {
+  border-left: 4px solid #3b82f6;
+  background-color: #f8fafc;
+  padding: 0.75rem 1.25rem;
+  font-style: italic;
+  color: #475569;
+  margin: 1.5rem 0;
+  border-radius: 0 8px 8px 0;
+}
+.theme-modern table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+.theme-modern th {
+  background-color: #f1f5f9;
+  color: #0f172a;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 2px solid #e2e8f0;
+}
+.theme-modern td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+  color: #475569;
+}
+.theme-modern ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.theme-modern ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.theme-modern li {
+  margin-bottom: 0.375rem;
+}
+
+/* Academic Theme */
+.theme-academic {
+  font-family: 'EB Garamond', serif;
+  font-size: 11.5pt;
+  line-height: 1.6;
+  text-align: justify;
+}
+.theme-academic h1 {
+  font-family: 'EB Garamond', serif;
+  font-size: 20pt;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.theme-academic h2 {
+  font-family: 'EB Garamond', serif;
+  font-size: 14pt;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #000000;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 2px;
+}
+.theme-academic h3 {
+  font-family: 'EB Garamond', serif;
+  font-size: 12pt;
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #000000;
+}
+.theme-academic p {
+  margin-bottom: 1.5rem;
+  text-indent: 1.5em;
+}
+.theme-academic p:first-of-type {
+  text-indent: 0;
+}
+.theme-academic code {
+  font-family: 'Fira Code', monospace;
+  font-size: 9.5pt;
+  background-color: #f5f5f5;
+  padding: 1px 3px;
+  border: 1px solid #e0e0e0;
+  color: #000000;
+}
+.theme-academic pre {
+  background-color: #fafafa;
+  border: 1px solid #dddddd;
+  padding: 12px;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  page-break-inside: avoid;
+}
+.theme-academic pre code {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+.theme-academic blockquote {
+  border-left: 2px solid #666666;
+  padding-left: 20px;
+  font-style: italic;
+  color: #444444;
+  margin: 1.5rem 24px;
+  text-indent: 0;
+}
+.theme-academic table {
+  width: 100%;
+  border-top: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+}
+.theme-academic th {
+  border-bottom: 1px solid #000000;
+  padding: 6px 12px;
+  font-weight: 600;
+  text-align: left;
+  color: #000000;
+}
+.theme-academic td {
+  padding: 6px 12px;
+  color: #111111;
+}
+.theme-academic ul {
+  list-style-type: square;
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+.theme-academic ol {
+  list-style-type: decimal;
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+.theme-academic li {
+  margin-bottom: 0.5rem;
+  text-indent: 0;
+}
+
+/* Editorial Theme */
+.theme-editorial {
+  font-family: 'Inter', sans-serif;
+}
+.theme-editorial h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #18181b;
+  text-align: left;
+  margin-top: 2rem;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+.theme-editorial h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #27272a;
+  margin-top: 1.75rem;
+  margin-bottom: 0.8rem;
+  border-left: 4px solid #18181b;
+  padding-left: 0.75rem;
+}
+.theme-editorial h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #3f3f46;
+  margin-top: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+.theme-editorial p {
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+  color: #3f3f46;
+}
+.theme-editorial code {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9em;
+  background-color: #f4f4f5;
+  padding: 0.15rem 0.35rem;
+  border-radius: 2px;
+  color: #000000;
+}
+.theme-editorial pre {
+  background-color: #18181b;
+  border-radius: 4px;
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+.theme-editorial pre code {
+  background-color: transparent;
+  color: #f4f4f5;
+  padding: 0;
+}
+.theme-editorial blockquote {
+  font-family: 'Playfair Display', serif;
+  border-top: 1px solid #e4e4e7;
+  border-bottom: 1px solid #e4e4e7;
+  padding: 1.5rem 0;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #27272a;
+  margin: 1.75rem 0;
+  text-align: center;
+}
+.theme-editorial table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+.theme-editorial th {
+  border-bottom: 2px solid #e4e4e7;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: #71717a;
+  padding: 0.5rem;
+  text-align: left;
+}
+.theme-editorial td {
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid #f4f4f5;
+  color: #3f3f46;
+}
+.theme-editorial ul {
+  list-style-type: circle;
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.theme-editorial ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.theme-editorial li {
+  margin-bottom: 0.4rem;
+}
+
+/* Minimal Theme */
+.theme-minimal {
+  font-family: 'Inter', sans-serif;
+}
+.theme-minimal h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #171717;
+  margin-top: 1.75rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+.theme-minimal h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #262626;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+.theme-minimal h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #404040;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.theme-minimal p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #404040;
+}
+.theme-minimal code {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85em;
+  background-color: #fafafa;
+  border: 1px solid #f0f0f0;
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+  color: #ea580c;
+}
+.theme-minimal pre {
+  background-color: #fafafa;
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1.25rem;
+}
+.theme-minimal pre code {
+  background-color: transparent;
+  border: none;
+  color: #171717;
+  padding: 0;
+}
+.theme-minimal blockquote {
+  border-left: 3px solid #e5e5e5;
+  padding-left: 1rem;
+  color: #737373;
+  margin: 1.25rem 0;
+}
+.theme-minimal table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.25rem;
+}
+.theme-minimal th {
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5rem;
+  border-bottom: 1px solid #e5e5e5;
+  color: #171717;
+}
+.theme-minimal td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #f5f5f5;
+  color: #525252;
+}
+.theme-minimal ul {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+.theme-minimal ol {
+  list-style-type: decimal;
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+.theme-minimal li {
+  margin-bottom: 0.25rem;
+}
+
+/* -------------------------------------------------------------
+   @MEDIA PRINT RULES
+   ------------------------------------------------------------- */
+@media print {
+  :root, .dark, html, body {
+    --background: 0 0% 100% !important;
+    --foreground: 240 10% 3.9% !important;
+    --card: 0 0% 100% !important;
+    --card-foreground: 240 10% 3.9% !important;
+    --popover: 0 0% 100% !important;
+    --popover-foreground: 240 10% 3.9% !important;
+    --primary: 262.1 83.3% 57.8% !important;
+    --primary-foreground: 0 0% 98% !important;
+    --secondary: 240 4.8% 95.9% !important;
+    --secondary-foreground: 240 5.9% 10% !important;
+    --muted: 240 4.8% 95.9% !important;
+    --muted-foreground: 240 3.8% 46.1% !important;
+    --accent: 240 4.8% 95.9% !important;
+    --accent-foreground: 240 5.9% 10% !important;
+    --destructive: 0 84.2% 60.2% !important;
+    --destructive-foreground: 0 0% 98% !important;
+    --border: 240 5.9% 90% !important;
+    --input: 240 5.9% 90% !important;
+    --ring: 262.1 83.3% 57.8% !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-family: inherit;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    overflow: visible;
+  }
+
+  /* Hide everything on screen except print section */
+  body * {
+    visibility: hidden;
+  }
+
+  #print-section, #print-section * {
+    visibility: visible;
+  }
+
+  #print-section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Force page breaks */
+  .page-break {
+    page-break-before: always;
+    break-before: page;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    visibility: hidden;
+  }
+
+  /* Keep code blocks readable when printed in grayscale */
+  pre, code {
+    background: #f8fafc !important;
+    color: #0f172a !important;
+    border-radius: 4px;
+    border: 1px solid #cbd5e1;
+    page-break-inside: avoid;
+  }
+
+  pre *, code * {
+    background: transparent !important;
+    color: #0f172a !important;
+  }
+
+  blockquote {
+    border-left: 3px solid #cbd5e1 !important;
+    color: #475569 !important;
+    background: #f8fafc !important;
+  }
+}
+
+/* -------------------------------------------------------------
+   ON-SCREEN ONLY: Dark Mode Overrides for Preview Themes
+   ------------------------------------------------------------- */
+@media screen {
+  /* Modern Theme Dark Overrides */
+  .dark .theme-modern h1 { color: #f8fafc; border-bottom-color: #3b82f6; }
+  .dark .theme-modern h2 { color: #e2e8f0; }
+  .dark .theme-modern h3 { color: #cbd5e1; }
+  .dark .theme-modern p { color: #cbd5e1; }
+  .dark .theme-modern strong { color: #f8fafc; }
+  .dark .theme-modern code { background-color: #1e293b; color: #60a5fa; }
+  .dark .theme-modern blockquote { background-color: #1e293b; color: #94a3b8; }
+  .dark .theme-modern th { background-color: #1e293b; color: #f8fafc; border-bottom-color: #334155; }
+  .dark .theme-modern td { border-bottom-color: #334155; color: #cbd5e1; }
+
+  /* Academic Theme Dark Overrides */
+  .dark .theme-academic h1 { color: #ffffff; }
+  .dark .theme-academic h2 { color: #ffffff; border-bottom-color: #ffffff; }
+  .dark .theme-academic h3 { color: #ffffff; }
+  .dark .theme-academic p { color: #e5e5e5; }
+  .dark .theme-academic code { background-color: #1a1a1a; border-color: #333333; color: #ffffff; }
+  .dark .theme-academic pre { background-color: #111111; border-color: #333333; }
+  .dark .theme-academic blockquote { border-left-color: #999999; color: #cccccc; }
+  .dark .theme-academic th { border-bottom-color: #ffffff; color: #ffffff; }
+  .dark .theme-academic td { color: #e5e5e5; }
+
+  /* Editorial Theme Dark Overrides */
+  .dark .theme-editorial h1 { color: #fafafa; }
+  .dark .theme-editorial h2 { color: #f4f4f5; border-left-color: #fafafa; }
+  .dark .theme-editorial h3 { color: #e4e4e7; }
+  .dark .theme-editorial p { color: #e4e4e7; }
+  .dark .theme-editorial code { background-color: #27272a; color: #ffffff; }
+  .dark .theme-editorial blockquote { border-color: #3f3f46; color: #f4f4f5; }
+  .dark .theme-editorial th { border-bottom-color: #3f3f46; color: #a1a1aa; }
+  .dark .theme-editorial td { border-bottom-color: #27272a; color: #e4e4e7; }
+
+  /* Minimal Theme Dark Overrides */
+  .dark .theme-minimal h1 { color: #f5f5f5; }
+  .dark .theme-minimal h2 { color: #e5e5e5; }
+  .dark .theme-minimal h3 { color: #d4d4d4; }
+  .dark .theme-minimal p { color: #d4d4d4; }
+  .dark .theme-minimal code { background-color: #262626; border-color: #404040; color: #ff7a3c; }
+  .dark .theme-minimal pre { background-color: #171717; border-color: #262626; }
+  .dark .theme-minimal blockquote { border-left-color: #404040; color: #a3a3a3; }
+  .dark .theme-minimal th { border-bottom-color: #404040; color: #f5f5f5; }
+  .dark .theme-minimal td { border-bottom-color: #262626; color: #a3a3a3; }
+}
+
+/* Workspace Container for Clean, Dot-Free Layout */
+.workspace-container {
+  @apply w-full h-full overflow-y-auto pt-3 pb-6 px-6 md:pt-4 md:pb-10 md:px-10 flex justify-center items-start bg-background transition-colors duration-300 relative;
+}
+
+/* Remove top margin from first elements in preview/print to start immediately at top */
+#print-section > div > *:first-child,
+#print-section > div > .toc-container + * {
+  margin-top: 0 !important;
+}
+
+
+/* Custom Animations */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.animate-slide-up-fade {
+  animation: slideUpFade 0.2s ease-out forwards;
+}
+
+/* Copy Code Block Hover Styles */
+.code-block-wrapper {
+  position: relative;
+}
+.code-block-wrapper .copy-btn {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.code-block-wrapper:hover .copy-btn {
+  opacity: 1;
+}
+
+/* TOC Styles */
+.toc-container {
+  @apply mb-8 p-4 border border-border bg-secondary/20 rounded-lg max-w-none;
+}
+.toc-title {
+  @apply font-semibold text-xs text-muted-foreground uppercase tracking-wider mb-2.5;
+}
+.toc-list {
+  @apply space-y-1.5 text-sm list-none pl-0;
+}
+.toc-item-h1 {
+  @apply font-medium text-foreground;
+}
+.toc-item-h2 {
+  @apply pl-4 text-muted-foreground hover:text-foreground;
+}
+.toc-item-h3 {
+  @apply pl-8 text-muted-foreground/80 hover:text-foreground;
+}
+
+/* Notepad Lined Paper Layout for Writing Mode */
+.notepad-editor-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.notepad-editor-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 3rem;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--red-line-color, rgba(239, 68, 68, 0.35));
+  pointer-events: none;
+  z-index: 20;
+}
+.notepad-textarea {
+  line-height: 2rem !important;
+  padding-left: 4rem !important;
+  padding-top: 0.74rem !important;
+  padding-bottom: 2rem !important;
+  background-image: linear-gradient(to bottom, transparent 1.95rem, var(--notepad-line-color, rgba(120, 119, 198, 0.08)) 1.95rem, var(--notepad-line-color, rgba(120, 119, 198, 0.08)) 2rem);
+  background-size: 100% 2rem;
+  background-attachment: local;
+  background-position: 0 0.8rem;
+}

@@ -1,0 +1,23 @@
+[package]
+name = "lumipdf"
+version = "0.1.0"
+description = "A lightweight Markdown to PDF desktop app"
+authors = ["Pinnacle Labs"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "2.0.0-rc", features = [] }
+
+[dependencies]
+tauri = { version = "2.0.0-rc", features = [] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[profile.release]
+panic = "abort" # Strip expensive panic infrastructure
+codegen-units = 1 # Compile everything as one unit for maximum speed/optimizations
+lto = true # Link-time optimization
+opt-level = "z" # Optimize for size
+strip = true # Strip symbols and debug info
