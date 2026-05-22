@@ -5,6 +5,9 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# Windows App SDK (winapp CLI downloads)
+.winapp/
+
 # Build outputs
 dist/
 dist-ssr/
