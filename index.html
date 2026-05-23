@@ -1,17 +1,210 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content="LumiPDF is a minimal markdown-to-PDF landing page." />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LumiPDF</title>
-    <!-- Google Fonts for standard preview and PDF templates -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Fira+Code:wght@300..700&family=Inter:wght@100..900&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #ffffff;
+        --text: #000000;
+        --muted: #444444;
+        --line: #d9d9d9;
+        --button-bg: #000000;
+        --button-text: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        min-height: 100%;
+        background: var(--bg);
+        color: var(--text);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+      }
+
+      .page {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 1.25rem 1.25rem 0;
+      }
+
+      .content {
+        width: 100%;
+        flex: 1;
+        min-height: calc(100vh - 5rem);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .eyebrow {
+        margin: 0 0 1rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .hero-logo {
+        width: 3.25rem;
+        height: 3.25rem;
+        margin-bottom: 1.25rem;
+        color: var(--text);
+      }
+
+      h1 {
+        margin: 0;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 0.25em;
+        font-size: clamp(3rem, 8vw, 6rem);
+        line-height: 0.94;
+        letter-spacing: -0.07em;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .hero-line {
+        display: inline;
+      }
+
+      .subline {
+        margin: 1.25rem 0 0;
+        max-width: 42rem;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--muted);
+      }
+
+      .actions {
+        margin-top: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 2.75rem;
+        padding: 0 1.1rem;
+        border: 1px solid var(--text);
+        border-radius: 999px;
+        color: var(--text);
+        text-decoration: none;
+        background: transparent;
+        transition: transform 140ms ease, border-color 140ms ease, background-color 140ms ease;
+      }
+
+      .button .store-icon {
+        width: 1rem;
+        height: 1rem;
+        margin-right: 0.6rem;
+        flex: 0 0 auto;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+        background: #f5f5f5;
+      }
+
+      .button.primary {
+        background: var(--button-bg);
+        color: var(--button-text);
+      }
+
+      .footer {
+        width: 100%;
+        margin-top: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        padding: 1rem 0 0.75rem;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+
+      .footer a {
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 640px) {
+        .page {
+          padding: 1rem 1rem 0;
+        }
+
+        h1 {
+          display: block;
+          white-space: normal;
+          gap: 0;
+          max-width: 10ch;
+        }
+
+        .hero-line {
+          display: block;
+        }
+      }
+    </style>
   </head>
-  <body class="bg-background text-foreground antialiased overflow-hidden min-h-screen">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body>
+    <main class="page">
+      <section class="content" aria-labelledby="hero-title">
+        <svg class="hero-logo" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M15 1H1V15H15V1ZM6 5L7.41421 6.41421L5.82843 8L7.41421 9.58579L6 11L3 8L6 5ZM10 5L8.58579 6.41421L10.1716 8L8.58579 9.58579L10 11L13 8L10 5Z" fill="currentColor"></path>
+        </svg>
+        <p class="eyebrow">LumiPDF</p>
+        <h1 id="hero-title"><span class="hero-line">Write clean,</span><span class="hero-line">export fast.</span></h1>
+        <p class="subline">
+          A minimal markdown workspace for drafting, previewing, and exporting PDFs without extra chrome.
+        </p>
+        <div class="actions">
+          <a class="button primary" id="downloadButton" href="https://www.microsoft.com/store/apps/" target="_blank" rel="noreferrer">
+            <svg class="store-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <rect x="2" y="2" width="9" height="9" fill="currentColor"></rect>
+              <rect x="13" y="2" width="9" height="9" fill="currentColor"></rect>
+              <rect x="2" y="13" width="9" height="9" fill="currentColor"></rect>
+              <rect x="13" y="13" width="9" height="9" fill="currentColor"></rect>
+            </svg>
+            Microsoft Store
+          </a>
+          <a class="button" href="./privacy.html">Privacy</a>
+        </div>
+      </section>
+      <div class="footer" aria-label="Bottom links">
+        <a href="./privacy.html">Privacy</a>
+        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="mailto:hello@lumipdf.app">Contact</a>
+        <a href="https://www.microsoft.com/store/apps/" target="_blank" rel="noreferrer">Microsoft Store</a>
+      </div>
+    </main>
   </body>
 </html>

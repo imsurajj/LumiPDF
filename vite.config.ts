@@ -5,6 +5,7 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(async () => ({
+  base: "./",
   plugins: [react()],
   resolve: {
     alias: {
@@ -35,5 +36,11 @@ export default defineConfig(async () => ({
     minify: !process.env.TAURI_ENV_DEBUG ? "esbuild" : false,
     // produce sourcemaps for debug builds
     sourcemap: !!process.env.TAURI_ENV_DEBUG,
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, "index.html"),
+        privacy: path.resolve(__dirname, "privacy.html"),
+      },
+    },
   },
 }));
