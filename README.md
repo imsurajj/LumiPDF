@@ -9,8 +9,13 @@ The project is configured to publish cleanly on GitHub Pages:
 - Vite builds with a relative base path so the site works from a repository subpath.
 - `privacy.html` is included as a second static page in the build output.
 - The favicon and asset paths are Pages-safe.
+- The MSIX installer is copied into `dist/downloads/` during `npm run build`.
 
 After you push the repository to GitHub, enable Pages from the `dist` output or connect a GitHub Actions deploy workflow.
+
+Use the direct package URL from Pages in Partner Center:
+
+`https://<your-github-pages-domain>/downloads/LumiPDF_0.1.0_x64.msix`
 
 ## Local development
 

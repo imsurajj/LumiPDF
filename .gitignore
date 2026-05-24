@@ -42,8 +42,9 @@ Cargo.lock
 Thumbs.db
 Desktop.ini
 
-# MSIX / Store packaging output
-store-package/
+# Signing artifacts
+store-package/*.pfx
+store-package/*.cer
 
 # Logs
 logs/
