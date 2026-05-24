@@ -66,18 +66,17 @@ The build output is written to `dist/` and includes:
 - `index.html`
 - `privacy.html`
 
-## MSIX packaging
+## MSI packaging
 
-The Tauri CLI in this repo builds MSI and NSIS, but this project also includes a separate MSIX packaging workflow.
+The repo now builds a versioned MSI for Vercel and Partner Center.
 
 ```powershell
-$env:LUMIPDF_PFX_PASSWORD = "your-pfx-password"
-npm run package:msix
+npm run package:msi
 ```
 
-The script stages only the built app, the frontend `dist` output, and the app assets, then packages and signs a clean MSIX.
+The Tauri build writes the MSI into `src-tauri/target/release/bundle/msi/`, and the postbuild step copies it into `dist/downloads/v1.0.0/LumiPDF.msi`.
 
-The MSIX output is written to `store-package/LumiPDF_0.1.0_x64.msix` and can be uploaded to Azure Blob Storage.
+The published URL is `https://lumipdf.vercel.app/downloads/v1.0.0/LumiPDF.msi`.
 
 ## Notes
 
