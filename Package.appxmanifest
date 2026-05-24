@@ -12,13 +12,13 @@
   IgnorableNamespaces="uap uap2 uap3 uap10 desktop desktop6 rescap">
 
   <Identity
-    Name="lumipdf"
-    Publisher="CN=LumiPDF"
+    Name="iamsuraj.LumiPDF"
+    Publisher="CN=2E3CE137-B314-40E9-B75A-BDF14BC67411"
     Version="1.0.0.0" />
 
   <Properties>
     <DisplayName>LumiPDF</DisplayName>
-    <PublisherDisplayName>LumiPDF</PublisherDisplayName>
+    <PublisherDisplayName>iamsuraj</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
