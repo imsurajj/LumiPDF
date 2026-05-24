@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "postbuild": "node scripts/sync-pages-download.mjs",
+    "postbuild": "node scripts/sync-download-artifact.mjs",
     "dev": "vite",
     "build": "tsc && vite build",
     "package:msix": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package-msix.ps1",

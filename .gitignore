@@ -43,6 +43,7 @@ Thumbs.db
 Desktop.ini
 
 # Signing artifacts
+store-package/*.msix
 store-package/*.pfx
 store-package/*.cer
 
