@@ -13,12 +13,12 @@
 
   <Identity
     Name="lumipdf"
-    Publisher="CN=iamsuraj"
+    Publisher="CN=LumiPDF"
     Version="1.0.0.0" />
 
   <Properties>
-    <DisplayName>lumipdf</DisplayName>
-    <PublisherDisplayName>iamsuraj</PublisherDisplayName>
+    <DisplayName>LumiPDF</DisplayName>
+    <PublisherDisplayName>LumiPDF</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -32,12 +32,12 @@
 
   <Applications>
     <Application Id="lumipdf"
-      Executable="$targetnametoken$.exe"
+      Executable="lumipdf.exe"
       EntryPoint="Windows.FullTrustApplication"
       uap10:TrustLevel="mediumIL"
       uap10:RuntimeBehavior="packagedClassicApp">
       <uap:VisualElements
-        DisplayName="lumipdf"
+        DisplayName="LumiPDF"
         Description="A beautiful Markdown to PDF editor with themes, custom fonts, and live preview"
         BackgroundColor="transparent"
         Square150x150Logo="Assets\MedTile.png"

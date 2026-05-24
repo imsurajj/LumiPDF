@@ -30,6 +30,19 @@ The build output is written to `dist/` and includes:
 - `index.html`
 - `privacy.html`
 
+## MSIX packaging
+
+The Tauri CLI in this repo builds MSI and NSIS, but this project also includes a separate MSIX packaging workflow.
+
+```powershell
+$env:LUMIPDF_PFX_PASSWORD = "your-pfx-password"
+npm run package:msix
+```
+
+The script stages only the built app, the frontend `dist` output, and the app assets, then packages and signs a clean MSIX.
+
+The MSIX output is written to `store-package/LumiPDF.msix`.
+
 ## Notes
 
 - The web demo stores preferences and draft content in browser local storage.
