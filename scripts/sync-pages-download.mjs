@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sourceCandidates = [
   path.join(rootDir, "downloads", "LumiPDF_0.1.0_x64.msix"),
-  path.join(rootDir, "store-package", "LumiPDF.msix"),
+  path.join(rootDir, "store-package", "LumiPDF_0.1.0_x64.msix"),
 ];
 const targetDir = path.join(rootDir, "dist", "downloads");
 const targetFile = path.join(targetDir, "LumiPDF_0.1.0_x64.msix");

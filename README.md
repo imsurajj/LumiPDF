@@ -46,7 +46,7 @@ npm run package:msix
 
 The script stages only the built app, the frontend `dist` output, and the app assets, then packages and signs a clean MSIX.
 
-The MSIX output is written to `store-package/LumiPDF.msix`.
+The MSIX output is written to `store-package/LumiPDF_0.1.0_x64.msix`.
 
 ## Notes
 
